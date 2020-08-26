@@ -13,5 +13,9 @@ namespace PruebaT.Web.Helpers
 
         Task<Opportunity> Job(string id);
 
+        Task<Search<SPerson>> searchpeople(String offset, String size, String[] agg);
+
+        Task<Search<SOpp>> searchoppt(String offset, String size, String[] agg);
+
     }
 }

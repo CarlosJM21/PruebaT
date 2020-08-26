@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace PruebaT.Web.Helpers
@@ -52,6 +53,39 @@ namespace PruebaT.Web.Helpers
             return o;
         }
 
+
+        public async Task<Search<SPerson>> searchpeople(String offset, String size, String[] agg) 
+        {
+            var lp = new Search<SPerson> { };
+            HttpClient client = Initial();
+            var content = new StringContent("", Encoding.UTF8, "application/json");
+            HttpResponseMessage res = await client.PostAsync("people/_search/", content);
+
+            if (res.IsSuccessStatusCode)
+            {
+                var result = res.Content.ReadAsStringAsync().Result;
+                lp = JsonConvert.DeserializeObject<Search<SPerson>>(result);
+            }
+
+            return lp;
+        }
+
+        public async Task<Search<SOpp>> searchoppt(String offset, String size, String[] agg) 
+        {
+            var lo = new Search<SOpp> { };
+            HttpClient client = Initial();
+            var content = new StringContent("", Encoding.UTF8, "application/json");
+            HttpResponseMessage res = await client.PostAsync("opportunities/_search/", content);
+
+            if (res.IsSuccessStatusCode)
+            {
+                var result = res.Content.ReadAsStringAsync().Result;
+                lo = JsonConvert.DeserializeObject<Search<SOpp>>(result);
+            }
+
+
+            return lo;
+        }
 
     }
 }
