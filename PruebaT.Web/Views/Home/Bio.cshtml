@@ -20,7 +20,31 @@
                 <br />
                 <h5>@Html.DisplayFor(model => model.person.name)</h5>
                 <h4>@Html.DisplayFor(model => model.person.professionalHeadline)</h4>
-                <div class="col-md-4"> <h3> Skills</h3> </div>
+                <div class="col-md-4">
+                    <h3> Strengths</h3>
+                    @if (Model.strengths.Count() == 0)
+                                {
+                    <H5></H5>
+                                }
+                                else
+                                {
+
+                    @foreach (var item in Model.strengths)
+                                {
+
+
+                    <div class="cardbio">
+
+                        <h4 style="padding-top:80px">@item.name</h4>
+                        <p>
+                            @item.weight <br />
+                            @item.created
+                        </p>
+
+                    </div>
+                                }
+                            }
+                </div>
                 <div class="col-md-4">
                     <h3> Experience</h3>
 
@@ -48,7 +72,32 @@
             }
 
                 </div>
-                <div class="col-md-4"> <h3> interest</h3> </div>
+                <div class="col-md-4">
+                    <h3> interest</h3>
+
+                    @if (Model.interests.Count() == 0)
+                                {
+                    <H5></H5>
+                                }
+                                else
+                                {
+
+                    @foreach (var item in Model.interests)
+                                {
+
+
+                    <div class="cardbio">
+
+                        <h4 style="padding-top:80px">@item.name</h4>
+                        <p>
+                            @item.created
+                        </p>
+
+                    </div>
+                                }
+                            }
+
+                </div>
             </div>
         </div>
 
