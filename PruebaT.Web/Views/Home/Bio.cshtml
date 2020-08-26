@@ -11,10 +11,45 @@
     <hr />
     <dl class="dl-horizontal">
         <div class="containertab">
-           
-            <img alt="People" src="@Url.Content( Model.person.picture )" width="330" height="330" />
-            <br />
-            <h4>@Html.DisplayFor(model => model.person.professionalHeadline)</h4>
+            <div class="col-md-4"> </div>
+            <div class="col-md-4">
+                <img alt="People" src="@Url.Content( Model.person.picture )" style="border-radius:15px" width="330" height="330" />
+            </div>
+            <div class="col-md-4"> </div>
+            <div class="col-md-12 center-block text-center">
+                <br />
+                <h5>@Html.DisplayFor(model => model.person.name)</h5>
+                <h4>@Html.DisplayFor(model => model.person.professionalHeadline)</h4>
+                <div class="col-md-4"> <h3> Skills</h3> </div>
+                <div class="col-md-4">
+                    <h3> Experience</h3>
+
+                    @if (Model.experiences.Count() == 0)
+            {
+                    <H5></H5>
+            }
+            else
+            {
+
+                    @foreach (var item in Model.experiences)
+                {
+                    
+
+                    <div class="cardbio">
+                        
+                            <h4 style="padding-top:80px">@item.name</h4>
+                            <p>
+                                @item.category <br />
+                            @item.fromYear - @item.fromMonth
+                        </p>
+                    
+                    </div>
+                }
+            }
+
+                </div>
+                <div class="col-md-4"> <h3> interest</h3> </div>
+            </div>
         </div>
 
     </dl>

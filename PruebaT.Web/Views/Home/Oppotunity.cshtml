@@ -4,17 +4,13 @@
     ViewData["Title"] = "Opportunity";
 }
 
-<h2>Oppotunity</h2>
+<h2>Opportunity</h2>
 
 <div>
     <hr />
+    <img alt="People" src="@Url.Content( Model.openGraph)" width="1080" height="1080" />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.boardVersion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.boardVersion)
-        </dd>
+        
         <dt>
             @Html.DisplayNameFor(model => model.locale)
         </dt>
@@ -32,12 +28,6 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.review)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.id)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.id)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.deadline)
@@ -69,12 +59,7 @@
         <dd>
             @Html.DisplayFor(model => model.opportunity)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.active)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.active)
-        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.stableOn)
         </dt>

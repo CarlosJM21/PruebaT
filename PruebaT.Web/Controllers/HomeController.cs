@@ -59,12 +59,13 @@ namespace PruebaT.Web.Controllers
 
         public async Task<IActionResult> Bio(String id)
         {
-      
+          
             return View(await _torreHelper.bio(id));
         }
 
         public async Task<IActionResult> Oppotunity(String id)
         {
+  
             return View(await _torreHelper.Job(id));
         }
 
