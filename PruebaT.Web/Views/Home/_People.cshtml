@@ -20,58 +20,78 @@
 
 <div class="col-md-8">
     <div class="row multi-columns-row">
+        <div class="containertab">
 
-        @if (Model.Results.Count() == 0)
-        {
-            <H5>No hay Personas para esta Busqueda.</H5>
-        }
-        else
-        {
-
-            @foreach (var item in Model.Results)
+            @if (Model.Results.Count() == 0)
             {
-                String url = item.picture;
-                <div class="col-md-6 mb-60 mb-xs-40 wow fadeIn">
-                    <article>
-                        <a class="articles-card" href="javascript:void(0)" title="">
-                            <div class="card-wrap">
-                                <div class="card-image">
-                                    <div class="article-thumbnail">
-                                        @Html.ActionLink(" ", "Bio", new { id = (item.username) }, new { @style = "  background-size: 100% ; background-image:url(\"" + url + "\");   " })
-                                    </div>
-                                </div>
-                                <div class="card-body text-right">
-                                    <h2 class="heading6 lp-0 mt-0 font-face1 text-right">@item.name</h2>
-
-                                </div>
-                                <div class="card-footer">
-                                    <div class="article_author">
-                                        <div class="portrait" data-background="images/blog/thumbnail/blog-img8.jpg"></div>
-                                        <div class="author light-text">@item.username</div>
-                                        <div class="date">10-Sept-16</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="like light-text"><a href="javascript:void(0)"><i class="fa fa-heart"></i></a> 20</div>
-                    </article>
-                </div>
+                <H5>No hay Personas para esta Busqueda.</H5>
             }
-        }
+            else
+            {
+
+                @foreach (var item in Model.Results)
+                {
+                    String url = item.picture;
+
+                    
+
+                            <!-- <div class="col-md-6 mb-60 mb-xs-40 wow fadeIn">
+                            <article>
+                                <a class="articles-card" href="javascript:void(0)" title="">
+                                    <div class="card-wrap">
+                                        <div class="card-image">
+                                            <div class="article-thumbnail">
+                                                @Html.ActionLink(" ", "Bio", new { id = (item.username) }, new { @style = "  background-size: 100% ; background-image:url(\"" + url + "\");   " })
+                                            </div>
+                                        </div>
+                                        <div class="card-body text-right">
+                                            <h2 class="heading6 lp-0 mt-0 font-face1 text-right">@item.name</h2>
+
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="article_author">
+                                                <div class="portrait" data-background="images/blog/thumbnail/blog-img8.jpg"></div>
+                                                <div class="author light-text">@item.username</div>
+                                                <div class="date">10-Sept-16</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="like light-text"><a href="javascript:void(0)"><i class="fa fa-heart"></i></a> 20</div>
+                            </article>
+                        </div>-->
 
 
 
+                    <div class="card">
+                        <div class="classimg">
+                            <a href="@Url.Action("Bio", "Home",new {id = item.username} )" title="List View" class="links">
+                                <img alt="People" src="@Url.Content( url )" width="330" height="330"/>
+                            </a>
+                        </div>
+                        <a asp-action="Bio" asp-route-id="@item.username">
+                            <h4 style="padding-top:110px">@item.name</h4>
+                            <p>@item.username</p>
+                            <a href="#">Leer más</a>
+                        </a>
+                    </div>
+                    
+                }
+            }
 
-        <!-- BLOG PAGINATION
+        </div>
+
+
+            <!-- BLOG PAGINATION
         ================================================== -->
-        <nav class="page-pagination mt-60">
-            <ul class="page-numbers">
-                <li><span class="page-numbers current">1</span></li>
-                <li><a class="page-numbers" href="javascript:void(0)">2</a></li>
-                <li><a class="page-numbers" href="javascript:void(0)">3</a></li>
-                <li><a class="page-numbers" href="javascript:void(0)"><i class="fa fa-angle-right"></i></a></li>
-            </ul>
-        </nav>
+            <nav class="page-pagination mt-60">
+                <ul class="page-numbers">
+                    <li><span class="page-numbers current">1</span></li>
+                    <li><a class="page-numbers" href="javascript:void(0)">2</a></li>
+                    <li><a class="page-numbers" href="javascript:void(0)">3</a></li>
+                    <li><a class="page-numbers" href="javascript:void(0)"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</div>
 

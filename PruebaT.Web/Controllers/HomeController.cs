@@ -54,5 +54,17 @@ namespace PruebaT.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public async Task<IActionResult> Bio(String Username)
+        {
+      
+            return View(await _torreHelper.bio(Username));
+        }
+
+        public async Task<IActionResult> Oppotunity(String id)
+        {
+            return View(await _torreHelper.Job(id));
+        }
+
     }
 }

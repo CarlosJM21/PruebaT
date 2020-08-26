@@ -22,57 +22,74 @@
 
 <div class="col-md-8">
     <div class="row multi-columns-row">
-
-        @if (Model.Results.Count() == 0)
-        {
-            <H5>No hay Personas para esta Busqueda.</H5>
-        }
-        else
-        {
-
-            @foreach (var item in Model.Results)
+        <div class="containertab">
+            @if (Model.Results.Count() == 0)
             {
-                String url = item.organizations.First().picture;
-                <div class="col-md-6 mb-60 mb-xs-40 wow fadeIn">
-                    <article>
-                        <a class="articles-card" href="javascript:void(0)" title="">
-                            <div class="card-wrap">
-                                <div class="card-image">
-                                    <div class="article-thumbnail">
-                                        @Html.ActionLink(" ", "Bio", new { id = (item.id) }, new { @style = "  background-size: 100% ; background-image:url(\"" + url + "\");   " })
-                                    </div>
-                                </div>
-                                <div class="card-body text-right">
-                                    <h2 class="heading6 lp-0 mt-0 font-face1 text-right">@item.objective</h2>
-                                    <h6>@item.organizations.First().name</h6>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="article_author">
-                                        <div class="portrait" data-background="images/blog/thumbnail/blog-img8.jpg"></div>
-                                        <div class="author light-text">Locations = @item.locations.FirstOrDefault()</div>
-                                        <div class="date">@item.deadline</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="like light-text"><a href="javascript:void(0)"><i class="fa fa-heart"></i></a> 20</div>
-                    </article>
-                </div>
+                <H5>No hay Personas para esta Busqueda.</H5>
             }
-        }
+            else
+            {
+
+                @foreach (var item in Model.Results)
+                {
+                    String url = item.organizations.First().picture;
+
+                    <!-- <a asp-action="Oppotunity" asp-route-id="@item.id">
+                    <div class="col-md-6 mb-60 mb-xs-40 wow fadeIn">
+                        <article>
+                            <a class="articles-card" href="javascript:void(0)" title="">
+                                <div class="card-wrap">
+                                    <div class="card-image">
+                                        <div class="article-thumbnail">
+                                            @Html.ActionLink(" ", "Oppotunity", new { id = (item.id) }, new { @style = "  background-size: 100% ; background-image:url(\"" + url + "\");   " })
+                                        </div>
+                                    </div>
+                                    <div class="card-body text-right">
+                                        <h2 class="heading6 lp-0 mt-0 font-face1 text-right">@item.objective</h2>
+                                        <h6>@item.organizations.First().name</h6>
+                                    </div>
+                                    <div class="card-footer">
+                                        <div class="article_author">
+                                            <div class="portrait" data-background="images/blog/thumbnail/blog-img8.jpg"></div>
+                                            <div class="author light-text">Locations  @item.locations.FirstOrDefault()</div>
+                                            <div class="date">@item.deadline</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </article>
+                    </div>
+                </a> -->
+
+                    <div class="card">
+                        <div class="classimg">
+                            <a href="@Url.Action("Oppotunity", "Home",new {id = item.id})" title="List View" class="links">
+                                <img alt="People" src="@Url.Content( url )" width="330" height="300" />
+                            </a>
+                        </div>
+                        <a asp-action="Bio" asp-route-id="@item.id">
+                            <h4 style="padding-top:80px">@item.objective</h4>
+                            <p>@item.organizations.First().name <br/>
+                            Locations  @item.locations.FirstOrDefault() <br />
+                            @item.deadline</p>
+                        </a>
+                    </div>
+                }
+            }
+
+         </div>
 
 
-
-
-        <!-- BLOG PAGINATION
+            <!-- BLOG PAGINATION
         ================================================== -->
-        <nav class="page-pagination mt-60">
-            <ul class="page-numbers">
-                <li><span class="page-numbers current">1</span></li>
-                <li><a class="page-numbers" href="javascript:void(0)">2</a></li>
-                <li><a class="page-numbers" href="javascript:void(0)">3</a></li>
-                <li><a class="page-numbers" href="javascript:void(0)"><i class="fa fa-angle-right"></i></a></li>
-            </ul>
-        </nav>
+            <nav class="page-pagination mt-60">
+                <ul class="page-numbers">
+                    <li><span class="page-numbers current">1</span></li>
+                    <li><a class="page-numbers" href="javascript:void(0)">2</a></li>
+                    <li><a class="page-numbers" href="javascript:void(0)">3</a></li>
+                    <li><a class="page-numbers" href="javascript:void(0)"><i class="fa fa-angle-right"></i></a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-</div>
