@@ -56,20 +56,24 @@
 <div class="row">
     <div>
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active">
-                <a href="#first" aria-controls="first" role="tab" data-toggle="tab">people</a>
+            <li role="presentation" class="active col-md-6  ">
+                <a class="glyphicon-user"  href="#first" aria-controls="first" role="tab" data-toggle="tab">people</a>
             </li>
-            <li role="presentation">
-                <a href="#second" aria-controls="second" role="tab" data-toggle="tab">Jobs</a>
+            <li role="presentation" class="col-md-6">    
+                    <a class="glyphicon-briefcase" href="#second" aria-controls="second" role="tab" data-toggle="tab">Jobs</a> 
             </li>
         </ul>
 
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="first">
-                @Html.Partial("~/Views/Home/People.cshtml", Model)
+
+                <partial name="_People" model="Model.People" />
+               
             </div>
             <div role="tabpanel" class="tab-pane" id="second">
-                @Html.Partial("~/Views/Home/Jobs.cshtml", Model)
+                
+                <partial name="_Jobs" model="Model.Jobs" />
+                
             </div>
         </div>
     </div>

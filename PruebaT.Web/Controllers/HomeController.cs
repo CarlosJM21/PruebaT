@@ -21,8 +21,13 @@ namespace PruebaT.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            
-            return View( await _torreHelper.searchpeople(null,null,null));
+            var s = new Searchs 
+            {
+                People= await _torreHelper.searchpeople(null, null, null),
+                Jobs= await _torreHelper.searchoppt(null,null,null)
+            };
+
+            return View(s);
         }
 
         public IActionResult About()

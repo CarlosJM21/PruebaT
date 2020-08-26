@@ -1,0 +1,78 @@
+﻿@model PruebaT.Web.Models.Search<SOpp>
+
+
+<div class="col-md-4">
+    <div class="blog-sidebar black-section">
+        <br/>
+        <!-- SEARCH WIDGET -->
+        <div class="widget clearfix black-section">
+            <form class="form-inline form" role="form">
+                <div class="search-wrap clearfix black-section">
+
+                    <input type="text" class="form-control search-field" placeholder="Search...">
+                    <button style="height:35px; padding-bottom:5px;" class="search-button" type="submit" title="Start Search">
+                        <i class="lnr lnr-magnifier"></i>
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-8">
+    <div class="row multi-columns-row">
+
+        @if (Model.Results.Count() == 0)
+        {
+            <H5>No hay Personas para esta Busqueda.</H5>
+        }
+        else
+        {
+
+            @foreach (var item in Model.Results)
+            {
+                String url = item.organizations.First().picture;
+                <div class="col-md-6 mb-60 mb-xs-40 wow fadeIn">
+                    <article>
+                        <a class="articles-card" href="javascript:void(0)" title="">
+                            <div class="card-wrap">
+                                <div class="card-image">
+                                    <div class="article-thumbnail">
+                                        @Html.ActionLink(" ", "Bio", new { id = (item.id) }, new { @style = "  background-size: 100% ; background-image:url(\"" + url + "\");   " })
+                                    </div>
+                                </div>
+                                <div class="card-body text-right">
+                                    <h2 class="heading6 lp-0 mt-0 font-face1 text-right">@item.objective</h2>
+                                    <h6>@item.organizations.First().name</h6>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="article_author">
+                                        <div class="portrait" data-background="images/blog/thumbnail/blog-img8.jpg"></div>
+                                        <div class="author light-text">Locations = @item.locations.FirstOrDefault()</div>
+                                        <div class="date">@item.deadline</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="like light-text"><a href="javascript:void(0)"><i class="fa fa-heart"></i></a> 20</div>
+                    </article>
+                </div>
+            }
+        }
+
+
+
+
+        <!-- BLOG PAGINATION
+        ================================================== -->
+        <nav class="page-pagination mt-60">
+            <ul class="page-numbers">
+                <li><span class="page-numbers current">1</span></li>
+                <li><a class="page-numbers" href="javascript:void(0)">2</a></li>
+                <li><a class="page-numbers" href="javascript:void(0)">3</a></li>
+                <li><a class="page-numbers" href="javascript:void(0)"><i class="fa fa-angle-right"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
