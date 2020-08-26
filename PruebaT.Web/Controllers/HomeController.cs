@@ -4,15 +4,25 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using PruebaT.Web.Helpers;
 using PruebaT.Web.Models;
 
 namespace PruebaT.Web.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+
+        private readonly ITorreHelper _torreHelper;
+
+        public HomeController(ITorreHelper torreHelper)
         {
-            return View();
+            _torreHelper = torreHelper;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            
+            return View( await _torreHelper.searchpeople(null,null,null));
         }
 
         public IActionResult About()

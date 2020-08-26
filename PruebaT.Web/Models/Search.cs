@@ -8,7 +8,7 @@ namespace PruebaT.Web.Models
     public class Search<T> where T : class
     {
 
-        public Aggregators aggregators { get; set; }
+        public aggregators aggregators { get; set; }
 
         public int offset { get; set; }
 
