@@ -123,3 +123,90 @@ body {
             text-decoration: none;
             color: #3498db;
         }
+
+        /*         Search              */
+.search-button {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #999;
+    font-size: 14px;
+    height: 40px;
+    line-height: 38px;
+    margin-top: -20px;
+    outline: medium none;
+    overflow: hidden;
+    position: absolute;
+    right: 1px;
+    top: 50%;
+    padding: 0px;
+    width: 42px;
+    min-width: auto;
+    transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
+    -webkit-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
+    -moz-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
+    -o-transition: all 0.27s cubic-bezier(0, 0, 0.58, 1) 0s;
+}
+
+.search-field {
+    box-sizing: border-box;
+    height: 40px !important;
+    width: 90% !important;
+}
+
+.search-button:hover {
+    color: #000;
+}
+
+    .search-button:hover + .search-field {
+        border-color: #ccc;
+    }
+
+    /* Pagination*/
+/* pagination */
+ul.page-numbers {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    border-radius: 8px;
+}
+
+    ul.page-numbers li {
+        display: inline-block;
+        height: 46px;
+        line-height: 46px;
+        text-align: center;
+        vertical-align: middle;
+        width: 46px;
+    }
+
+        ul.page-numbers li > a,
+        ul.page-numbers li > span {
+            background-color: #f2f2f2;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 30px;
+            font-weight: 400;
+            height: 46px;
+            line-height: 46px;
+            margin: 0;
+            outline: 0 none;
+            position: relative;
+            text-decoration: none;
+            text-shadow: none;
+            text-transform: uppercase;
+            transition: color 0.3s ease-in-out 0s, background-color 0.3s ease-in-out 0s;
+            -webkit-transition: color 0.3s ease-in-out 0s, background-color 0.3s ease-in-out 0s;
+            -moz-transition: color 0.3s ease-in-out 0s, background-color 0.3s ease-in-out 0s;
+            vertical-align: middle;
+            white-space: nowrap;
+            width: 46px;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+            ul.page-numbers li > a:hover, ul.page-numbers li span.current {
+                background-color: #212121;
+                color: #fff;
+            }

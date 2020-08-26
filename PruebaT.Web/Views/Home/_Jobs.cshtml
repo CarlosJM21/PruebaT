@@ -10,7 +10,7 @@
                 <div class="search-wrap clearfix black-section">
 
                     <input type="text" class="form-control search-field" placeholder="Search...">
-                    <button style="height:35px; padding-bottom:5px;" class="search-button" type="submit" title="Start Search">
+                    <button style="height:50px; padding-top:10px;" class="search-button glyphicon glyphicon-search" type="submit" title="Start Search">
                         <i class="lnr lnr-magnifier"></i>
                     </button>
 
@@ -68,7 +68,7 @@
                                 <img alt="People" src="@Url.Content( url )" width="330" height="300" />
                             </a>
                         </div>
-                        <a asp-action="Bio" asp-route-id="@item.id">
+                        <a asp-action="Oppotunity" asp-route-id="@item.id">
                             <h4 style="padding-top:80px">@item.objective</h4>
                             <p>@item.organizations.First().name <br/>
                             Locations  @item.locations.FirstOrDefault() <br />
