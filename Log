@@ -1,0 +1,59 @@
+				25/08/2020
+17:05 inicio
+17:06 revision de los apis (uso del bio y oportunities )
+17:25 fin revision de los apis
+17:29 creacion del repositorio de git 
+17:32 Creacion del proyecto en blanco 
+17:45 se crean los helper y se inyectan en el startup del proyecto 
+17:52 se hace el primer commit con el proyecto en blanco sobre master
+17:55 se empiezan a crear los modelos para deserializar el response de 			opportunities como objetos
+18:32 se terrmina de crear los modelos para deserializar el response 	de 		opportunities
+18:33 se empiezan a crear los modelos para deserializar el response de 			Bio como objetos
+18:42 se terrmina de crear los modelos para deserializar el response de 		Bio como objetos, se hace commit
+18:43 se ajusta el TorreHelper para que consuma los apis de Bio y oportunity
+18:57 se realiza el comit de lo avanzado
+18:58 se comienza a revisar los apis de busqueda 
+19:19 se termina de revisar los apis de busqueda
+19:20 se generar una clase generica para las respuestas  de las 		busquedas 
+19:40 Start Dinner time
+20:25 End Dinner time
+20:26 se empiezan a crear los modelos para deserializar el response de la 	busqueda general de personas
+20:55 se termina de crear los modelos para deserializar el response de la 		busqueda general de personas
+20:56 se empiezan a crear los modelos para deserializar el response de la 		busqueda general de oportunidades.
+21:25 se termina de crear los modelos para deserializar el response de la 		busqueda general de oportunidades.
+21:26 se ajusta el TorreHelper para que consuma los apis de busqueda de 	personas
+22:00 se termina de crear los modelos para deserializar el response de la 		busqueda general de oportunidades.
+
+22:01 commit de los avances
+
+22:02 - 22:32 Break
+
+22:33 - se revisa el consumo de los apis basicoas de search
+23:00 - se comienza a modificar la vista index para que  muestre las 	busquedas  para people y opportunities en pestañas
+23:25 - se crea modelo Searchs para que los tabs funcionen correctamente 
+23:28 - se crean las vistas parciales para las pestañas
+23:30 - se verifica el correcto funcionamiento de los tabs
+23:31 - se comienza a ajustar las vistas parciales de cada pestaña  
+23:51 - se Comienza a validar la muestra de los datos traidos desde el 		search de people y 	opportunities sin filtros
+
+				26/08/2020
+
+00:20 - se muestran correctamente los datos flata trabajar en la vista
+00:25 - se comienza creacionde cuenta del servidor gratuito
+00:55 - se  solicitan los datos para configuracion y publicacion 
+00:57 - se configura el IDE para la publicacion en el servidor
+00:59 - se comienza la publicacion del la version beta de la web
+01:00 - revision de la verison beta online
+01:11 - commit de avances
+
+10:00 - start again
+10:20 - analisis y avance 
+10:21 - retoma desarrollo y ajuste de vista index
+11:00 - se comienza ajistar la forma de tarjetas del index
+12:00 - ajustes del consumo del api
+12:30 - ajustes de la paginacion
+13.00 - ajustes de estilos css
+14:00 - creacion y ajustes de la vista Opportunity
+15:00 - creacion y ajustes de la vista Bio
+16:00 - ajustes para cambiar la tanb actibva del index desde codigo
+17:00 - terminar de ajustar la vista bio y cargar al servidor
