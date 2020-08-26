@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PruebaT.Web.Helpers;
 using PruebaT.Web.Models;
+using PruebaT.Web.ViewModels;
 
 namespace PruebaT.Web.Controllers
 {
@@ -21,10 +22,11 @@ namespace PruebaT.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var s = new Searchs 
+            var s = new IndexViewModel 
             {
                 People= await _torreHelper.searchpeople(null, null, null),
-                Jobs= await _torreHelper.searchoppt(null,null,null)
+                Jobs= await _torreHelper.searchoppt(null,null,null),
+                Tab = 1
             };
 
             return View(s);
@@ -55,10 +57,10 @@ namespace PruebaT.Web.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        public async Task<IActionResult> Bio(String Username)
+        public async Task<IActionResult> Bio(String id)
         {
       
-            return View(await _torreHelper.bio(Username));
+            return View(await _torreHelper.bio(id));
         }
 
         public async Task<IActionResult> Oppotunity(String id)

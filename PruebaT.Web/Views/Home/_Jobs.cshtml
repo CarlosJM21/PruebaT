@@ -16,6 +16,15 @@
 
                 </div>
             </form>
+            <div>
+                <h4> Type of Job</h4>
+                <ul>
+                    <li><a href="javascript:void(0)">Full-time employment</a></li>
+                    <li><a href="javascript:void(0)">Part-time employment </a></li>
+                    <li><a href="javascript:void(0)">Freelance gigs </a></li>
+                    <li><a href="javascript:void(0)">Internships </a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
@@ -33,34 +42,6 @@
                 @foreach (var item in Model.Results)
                 {
                     String url = item.organizations.First().picture;
-
-                    <!-- <a asp-action="Oppotunity" asp-route-id="@item.id">
-                    <div class="col-md-6 mb-60 mb-xs-40 wow fadeIn">
-                        <article>
-                            <a class="articles-card" href="javascript:void(0)" title="">
-                                <div class="card-wrap">
-                                    <div class="card-image">
-                                        <div class="article-thumbnail">
-                                            @Html.ActionLink(" ", "Oppotunity", new { id = (item.id) }, new { @style = "  background-size: 100% ; background-image:url(\"" + url + "\");   " })
-                                        </div>
-                                    </div>
-                                    <div class="card-body text-right">
-                                        <h2 class="heading6 lp-0 mt-0 font-face1 text-right">@item.objective</h2>
-                                        <h6>@item.organizations.First().name</h6>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="article_author">
-                                            <div class="portrait" data-background="images/blog/thumbnail/blog-img8.jpg"></div>
-                                            <div class="author light-text">Locations  @item.locations.FirstOrDefault()</div>
-                                            <div class="date">@item.deadline</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </article>
-                    </div>
-                </a> -->
 
                     <div class="card">
                         <div class="classimg">

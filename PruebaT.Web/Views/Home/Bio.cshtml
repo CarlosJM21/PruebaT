@@ -10,6 +10,13 @@
     <h4>Bio</h4>
     <hr />
     <dl class="dl-horizontal">
+        <div class="containertab">
+           
+            <img alt="People" src="@Url.Content( Model.person.picture )" width="330" height="330" />
+            <br />
+            <h4>@Html.DisplayFor(model => model.person.professionalHeadline)</h4>
+        </div>
+
     </dl>
 </div>
 <div>

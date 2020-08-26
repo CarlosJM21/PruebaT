@@ -7,21 +7,21 @@
 <div class="row">
     <div>
         <ul class="nav nav-tabs" role="tablist">
-            <li role="presentation" class="active col-md-6  ">
+            <li role="presentation" class="@(Model.Tab== 1 ? "active" : string.Empty) col-md-6  ">
                 <a class="glyphicon glyphicon-user"  href="#first" aria-controls="first" role="tab" data-toggle="tab"> People</a>
             </li>
-            <li role="presentation" class="col-md-6">    
+            <li role="presentation" class="@(Model.Tab== 2 ? "active" : string.Empty) col-md-6">    
                     <a class="glyphicon glyphicon-briefcase" href="#second" aria-controls="second" role="tab" data-toggle="tab"> Jobs</a> 
             </li>
         </ul>
 
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="first">
+            <div role="tabpanel" class="tab-pane @(Model.Tab== 1 ? "active" : string.Empty)" id="first">
 
                 <partial name="_People" model="Model.People" />
                
             </div>
-            <div role="tabpanel" class="tab-pane" id="second">
+            <div role="tabpanel" class=$"tab-pane @(Model.Tab== 2 ? "active" : string.Empty)" id="second">
                 
                 <partial name="_Jobs" model="Model.Jobs" />
                 
